@@ -20,6 +20,7 @@ pipeline {
         stage('Deliver') { 
             steps {
                 sh 'dotnet publish BlazorApp --no-restore -o published' 
+                sh 'dotnet run --project BlazorApp'
             }
             post {
                 success {
